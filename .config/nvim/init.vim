@@ -64,10 +64,15 @@ if has('mac')
 endif
 
 " source filetype-specific configurations
-source ~/.config/nvim/conf.d/filetype_config/markdown.vim
+if filereadable("~/.config/nvim/conf.d/filetype_config/markdown.vim")
+  source ~/.config/nvim/conf.d/filetype_config/markdown.vim
+endif
 
 " source keybindings
-source ~/.config/nvim/conf.d/keybindings.vim
-
+if filereadable("~/.config/nvim/conf.d/keybindings.vim")
+  source ~/.config/nvim/conf.d/keybindings.vim
+end
 " source colorscheme
-source ~/.config/nvim/conf.d/colorscheme.vim
+if filereadable("~/.config/nvim/conf.d/colorscheme.vim")
+  source ~/.config/nvim/conf.d/colorscheme.vim
+endif
