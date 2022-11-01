@@ -1,5 +1,5 @@
 autocmd FileType vim call ddc#custom#patch_filetype(['vim'], 'sources', ['nvim-lsp', 'file', 'necovim', 'around'])
-autocmd FileType c,cpp call ddc#custom#patch_filetype(['vim'], 'sources', ['nvim-lsp', 'file', 'around'])
+autocmd FileType c,cpp call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['nvim-lsp', 'file', 'around'])
 autocmd FileType tex,latex call ddc#custom#patch_filetype(['tex', 'latex'], 'sources', ['nvim-lsp', 'file', 'around']) | set syntax=tex
 autocmd FileType tex,latex setlocal indentexpr=GetTeXIndent() | let g:tex_indent_items = 0
 autocmd BufNewFile,BufRead *.yaml lua require'lspconfig'.yamlls.setup{}

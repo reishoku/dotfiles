@@ -55,16 +55,16 @@ if dein#load_state(g:user_home_cache_dir . "/dein")
   call dein#begin(g:user_home_cache_dir . "/dein")
     call dein#add("tomasr/molokai")
     call dein#add('ConradIrwin/vim-bracketed-paste')
+    call dein#add('Shougo/ddc.vim')
+    call dein#add('Shougo/ddc-nvim-lsp')
     call dein#add('LumaKernel/ddc-file')
     call dein#add('Shougo/context_filetype.vim')
     call dein#add('Shougo/ddc-around')
     call dein#add('Shougo/ddc-converter_remove_overlap')
     call dein#add('Shougo/ddc-matcher_head')
     call dein#add('Shougo/ddc-matcher_length')
-    call dein#add('Shougo/ddc-nvim-lsp')
     call dein#add('Shougo/ddc-sorter_rank')
     call dein#add('Shougo/ddc-ui-native')
-    call dein#add('Shougo/ddc.vim')
     call dein#add('Shougo/ddu-ui-ff')
     call dein#add('Shougo/ddu.vim')
     call dein#add('Shougo/neco-vim')
@@ -93,6 +93,9 @@ if dein#load_state(g:user_home_cache_dir . "/dein")
     call dein#add('vim-jp/vimdoc-ja')
     call dein#add('williamboman/nvim-lsp-installer')
     call dein#add('yioneko/nvim-yati')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+    call dein#add('kyazdani42/nvim-web-devicons')
   call dein#end()
   call dein#save_state()
   if dein#check_install()
@@ -111,4 +114,13 @@ source ~/.config/nvim/conf.d/plugin_config/vim-markdown.vim
 
 
 " source autocmd
-source ~/.config/nvim/conf.d/autocmd.vim
+autocmd FileType vim call ddc#custom#patch_filetype(['vim'], 'sources', ['nvim-lsp', 'file', 'necovim', 'around'])
+autocmd FileType c,cpp call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['nvim-lsp', 'file', 'around'])
+autocmd FileType tex,latex call ddc#custom#patch_filetype(['tex', 'latex'], 'sources', ['nvim-lsp', 'file', 'around']) | set syntax=tex
+autocmd FileType tex,latex setlocal indentexpr=GetTeXIndent() | let g:tex_indent_items = 0
+autocmd BufNewFile,BufRead *.yaml lua require'lspconfig'.yamlls.setup{}
+autocmd BufNewFile,BufRead *.yaml call ddc#custom#patch_filetype(['yaml'], 'sources', ['nvim-lsp', 'around']) | set filetype=yaml
+autocmd FileType markdown call ddc#custom#patch_filetype(['markdown'], 'sources', ['nvim-lsp', 'around'])
+autocmd FileType rust lua require'lspconfig'.rust_analyzer.setup{}
+autocmd FileType rust call ddc#custom#patch_filetype(['rust'], 'sources', ['nvim-lsp', 'around'])
+
