@@ -1,36 +1,6 @@
 lua << EOF
 local configs = require('lspconfig.configs')
 local lspconfig = require('lspconfig')
-if not configs.awklsp then
-  configs.awklsp = {
-    default_config = {
-      cmd = { 'awk-language-server' },
-      filetypes = { 'awk' },
-      single_file_support = true,
-      handlers = {
-        ['workspace/workspaceFolders'] = function()
-          return {{
-            uri = 'file://' .. vim.fn.getcwd(),
-            name = 'current_dir',
-          }}
-        end
-      }
-    },
-  }
-end
-lspconfig.efm.setup {
-  autostart = false;
-  init_options = {documentFormatting = true},
-  settings = {
-    rootMarkers = {".git/"},
-    languages = {
-      markdown = {
-        {formatCommand = "pandoc -f markdown -t gfm -sp --tab-stop=2", formatStdin = true}
-      }
-    }
-  }
-}
-lspconfig.awklsp.setup{}
 lspconfig.clangd.setup{}
 lspconfig.texlab.setup{
   cmd = {'/opt/homebrew/bin/texlab'},
@@ -61,4 +31,6 @@ require("fidget").setup()
 require("nvim-treesitter.configs").setup {
   yati = { enable = true },
 }
+require("mason").setup()
+require("mason-lspconfig").setup()
 EOF

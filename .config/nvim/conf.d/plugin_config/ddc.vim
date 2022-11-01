@@ -26,15 +26,12 @@ call ddc#custom#patch_global('sourceParams', {
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('ui', 'native')
 
-" inoremap <silent><expr> <TAB>
-"       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-"       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-"       \ '<TAB>' : ddc#map#manual_complete()
-
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
+
+inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
 inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
