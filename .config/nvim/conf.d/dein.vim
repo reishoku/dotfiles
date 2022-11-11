@@ -115,6 +115,7 @@ source ~/.config/nvim/conf.d/plugin_config/nvim-lsp.vim
 source ~/.config/nvim/conf.d/plugin_config/wilder.nvim
 source ~/.config/nvim/conf.d/plugin_config/ddc.vim
 source ~/.config/nvim/conf.d/plugin_config/vim-markdown.vim
+source ~/.config/nvim/conf.d/plugin_config/treesitter.vim
 
 
 " source autocmd

@@ -30,6 +30,9 @@ vim.g.loaded_netrwPlugin = 1
 require("fidget").setup()
 require("nvim-treesitter.configs").setup {
   yati = { enable = true },
+  indent = {enable = true},
+  highlight = {enable = true},
+  incremental_selection = {enable = true},
 }
 require("mason").setup()
 require("mason-lspconfig").setup()
