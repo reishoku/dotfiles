@@ -1,16 +1,6 @@
 
-let g:loaded_colorscheme_config = v:false
-
-if g:loaded_colorscheme_config == v:true
-  finish
-endif
-
-if !g:dein_plugin_manager_available
-  colorscheme default
-  let g:loaded_colorscheme_config = v:true
-  finish
-endif
+set termguicolors
 
 colorscheme molokai
+" colorscheme gruvbox-material
 
-let g:loaded_colorscheme_config = v:true
