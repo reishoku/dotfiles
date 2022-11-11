@@ -97,11 +97,12 @@ if dein#load_state(g:user_home_cache_dir . "/dein")
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
     call dein#add('kyazdani42/nvim-web-devicons')
+    call dein#add('preservim/nerdtree')
   call dein#end()
   call dein#save_state()
-  if dein#check_install()
-    call dein#install()
-  endif
+endif
+if dein#check_install()
+  call dein#install()
 endif
 
 " source plugin-specific configurations
