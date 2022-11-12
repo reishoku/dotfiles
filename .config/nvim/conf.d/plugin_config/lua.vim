@@ -19,7 +19,7 @@ lspconfig.texlab.setup{
   }
 }
 lspconfig.pyright.setup{}
-require("todo-comments").setup{}
+-- require("todo-comments").setup{} -- This plugin has compatibility issue with nvim-treesitter-context (it seems)
 require('lualine').setup()
 require('glow').setup()
 -- disable netrw at the very start of your init.lua (strongly advised)
