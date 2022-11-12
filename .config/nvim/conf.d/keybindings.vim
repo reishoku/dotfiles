@@ -1,4 +1,4 @@
 
 nnoremap q <nop>
-nnoremap <silent><S-Tab> :NERDTreeToggle<CR>
+nnoremap <silent><S-Space> :NERDTreeToggle<CR>
 tnoremap <Esc> <C-\><C-n>
