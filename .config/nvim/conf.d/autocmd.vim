@@ -8,3 +8,6 @@ autocmd FileType markdown call ddc#custom#patch_filetype(['markdown'], 'sources'
 autocmd FileType rust lua require'lspconfig'.rust_analyzer.setup{}
 autocmd FileType rust call ddc#custom#patch_filetype(['rust'], 'sources', ['nvim-lsp', 'around'])
 autocmd FileType help wincmd L
+autocmd TermOpen * setl modifiable norelativenumber
+autocmd TermOpen * setl scrollback=100000
+autocmd TermEnter * startinsert

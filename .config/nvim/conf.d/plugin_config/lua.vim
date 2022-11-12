@@ -21,7 +21,7 @@ lspconfig.texlab.setup{
 lspconfig.pyright.setup{}
 -- require("todo-comments").setup{} -- This plugin has compatibility issue with nvim-treesitter-context (it seems)
 require('lualine').setup()
-require('glow').setup()
+require('glow').setup({pager = true, width = 120})
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
@@ -34,6 +34,7 @@ require("nvim-treesitter.configs").setup {
   highlight = {enable = true},
   incremental_selection = {enable = true},
 }
+require("twilight").setup{}
 require("mason").setup()
 require("mason-lspconfig").setup()
 EOF

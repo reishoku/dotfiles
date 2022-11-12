@@ -40,7 +40,7 @@ set matchpairs+=<:>
 set completeopt=menuone
 
 if v:progname == "view" || v:progname == "ex"
-  set readonly
+  setl readonly nonumber norelativenumber
   syntax enable
   finish
 endif
@@ -75,4 +75,8 @@ end
 " source colorscheme
 if filereadable(expand("~/.config/nvim/conf.d/colorscheme.vim"))
   source ~/.config/nvim/conf.d/colorscheme.vim
+endif
+" source autocmd
+if filereadable(expand("~/.config/nvim/conf.d/autocmd.vim.vim"))
+  source ~/.config/nvim/conf.d/autocmd.vim
 endif
