@@ -77,6 +77,6 @@ if filereadable(expand("~/.config/nvim/conf.d/colorscheme.vim"))
   source ~/.config/nvim/conf.d/colorscheme.vim
 endif
 " source autocmd
-if filereadable(expand("~/.config/nvim/conf.d/autocmd.vim.vim"))
+if filereadable(expand("~/.config/nvim/conf.d/autocmd.vim"))
   source ~/.config/nvim/conf.d/autocmd.vim
 endif
