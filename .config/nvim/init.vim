@@ -59,8 +59,11 @@ if filereadable(expand("~/.config/nvim/conf.d/dein.vim"))
 endif
 
 " source platform-specific configurations
-if has('mac')
+if has('mac') && filereadable(expand("~/.config/nvim/conf.d/macos.vim"))
   source ~/.config/nvim/conf.d/macos.vim
+endif
+if has('linux') && filereadable(expand("~/.config/nvim/conf.d/linux.vim"))
+  source ~/.config/nvim/conf.d/linux.vim
 endif
 
 " source filetype-specific configurations

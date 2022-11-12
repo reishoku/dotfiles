@@ -1,17 +1,16 @@
 
-let g:loaded_macos_specific_configs = v:false
+let g:loaded_linux_specific_configs = v:false
 
-if g:loaded_macos_specific_configs == v:true
+if g:loaded_linux_specific_configs == v:true
   finish
 endif
 
-" macOS-specific configurations
+" Linux-specific configurations
 
 let g:python_host_skip_check=1
 let g:loaded_python_provider=0
 let g:python3_host_skip_check=1
 
-" arm64-specific configurations
 if !empty(executable("python3"))
   let g:python3_host_prog = exepath("python3")
 endif
@@ -19,11 +18,11 @@ if !empty(executable("neovim-ruby-host"))
   let g:ruby_host_prog = exepath("neovim-ruby-host")
 endif
 
-" finish loading macOS-specific configurations
-let g:loaded_macos_specific_configs = v:true
+" finish loading Linux-specific configurations
+let g:loaded_linux_specific_configs = v:true
 
 " swap, undo, backup directories
-if has("mac")
+if has("linux")
   if !isdirectory(expand("~/.cache"))
     call mkdir(expand("~/.cache"))
   endif

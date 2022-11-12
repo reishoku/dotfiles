@@ -50,7 +50,7 @@ if !has("win32")
   endif
 endif
 
-set runtimepath+=/Users/reishoku/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state(g:user_home_cache_dir . "/dein")
   call dein#begin(g:user_home_cache_dir . "/dein")
     call dein#add("tomasr/molokai")
@@ -112,14 +112,9 @@ endif
 
 " source plugin-specific configurations
 let g:denops_disable_version_check=1
-source ~/.config/nvim/conf.d/plugin_config/vimtex.vim
-source ~/.config/nvim/conf.d/plugin_config/lua.vim
-source ~/.config/nvim/conf.d/plugin_config/nvim-lsp.vim
-source ~/.config/nvim/conf.d/plugin_config/wilder.nvim
-source ~/.config/nvim/conf.d/plugin_config/ddc.vim
-source ~/.config/nvim/conf.d/plugin_config/vim-markdown.vim
-source ~/.config/nvim/conf.d/plugin_config/treesitter.vim
-
+for file in split(glob("~/.config/nvim/conf.d/plugin_config/*.vim"), "\n")
+  execute "source" file
+endfor
 
 " source autocmd
 autocmd FileType vim call ddc#custom#patch_filetype(['vim'], 'sources', ['nvim-lsp', 'file', 'necovim', 'around'])
