@@ -25,6 +25,7 @@ call ddc#custom#patch_global('sourceParams', {
       \})
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
 call ddc#custom#patch_global('ui', 'native')
+call ddc#custom#patch_global('keywordPattern', '[a-zA-Z_:\-]\w*')
 
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? '<C-n>' :
