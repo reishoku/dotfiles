@@ -1,6 +1,7 @@
 lua << EOF
 local configs = require('lspconfig.configs')
 local lspconfig = require('lspconfig')
+local actions = require("telescope.actions")
 lspconfig.clangd.setup{}
 lspconfig.texlab.setup{
   cmd = {'/opt/homebrew/bin/texlab'},
@@ -38,4 +39,25 @@ require("nvim-treesitter.configs").setup {
 require("twilight").setup{}
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("telescope").setup({
+defaults = {
+  mappings = {
+    i = {
+        ["<esc>"] = actions.close,
+      },
+    },
+  },
+})
+require'nterm.main'.init({
+  maps = true,  -- load defaut mappings
+  shell = "fish",
+  size = 20,
+  direction = "horizontal", -- horizontal or vertical
+  popup = 2000,     -- Number of miliseconds to show the info about the commmand. 0 to dissable
+  popup_pos = "SE", --  one of "NE" "SE" "SW" "NW"
+  autoclose = 0, -- If command is sucesful, close the terminal after that number of miliseconds. 0 to disable
+})
+
+-- Optional, if you want to use the telescope extension
+require('telescope').load_extension('nterm')
 EOF

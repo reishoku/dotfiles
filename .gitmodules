@@ -10,3 +10,6 @@
 [submodule ".tmux/plugins/tmux-continuum"]
   path = .tmux/plugins/tmux-continuum
   url = https://github.com/tmux-plugins/tmux-continuum
+[submodule ".w3m"]
+	path = .w3m
+	url = https://github.com/reishoku/keymap.w3m.git

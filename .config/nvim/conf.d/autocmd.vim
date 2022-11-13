@@ -5,7 +5,7 @@ autocmd FileType tex,latex setlocal indentexpr=GetTeXIndent() | let g:tex_indent
 autocmd BufNewFile,BufRead *.yaml lua require'lspconfig'.yamlls.setup{}
 autocmd BufNewFile,BufRead *.yaml call ddc#custom#patch_filetype(['yaml'], 'sources', ['nvim-lsp', 'around']) | set filetype=yaml
 autocmd BufNewFile,BufRead *.sh setf bash
-autocmd FileType markdown call ddc#custom#patch_filetype(['markdown'], 'sources', ['nvim-lsp', 'around'])
+autocmd FileType markdown call ddc#custom#patch_filetype(['markdown'], 'sources', ['nvim-lsp', 'around']) | setl formatoptions+=mM | set formatexpr=autofmt#japanese#formatexpr()
 autocmd FileType rust lua require'lspconfig'.rust_analyzer.setup{}
 autocmd FileType rust call ddc#custom#patch_filetype(['rust'], 'sources', ['nvim-lsp', 'around'])
 autocmd FileType help wincmd L

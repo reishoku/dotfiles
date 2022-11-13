@@ -2,6 +2,8 @@
 
 export NONINTERACTIVE=1
 
+sudo -v
+
 # system check
 [[ "$(uname -s)" != "Linux" ]] && echo "This system is not Linux apparently."; exit 1;
 [[ -f "/etc/os-release" ]] && source /etc/os-release

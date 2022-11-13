@@ -30,7 +30,7 @@ set tabstop=2
 set shiftwidth=2
 set ttimeoutlen=10
 set inccommand=split
-set colorcolumn=75
+set colorcolumn=80
 set wildoptions=pum
 set whichwrap=b,s,[,],<,>,~
 set backspace=indent,eol,start
@@ -38,6 +38,7 @@ set laststatus=2
 set matchpairs&
 set matchpairs+=<:>
 set completeopt=menuone
+set iskeyword+=-
 
 if v:progname == "view" || v:progname == "ex"
   setl readonly nonumber norelativenumber
