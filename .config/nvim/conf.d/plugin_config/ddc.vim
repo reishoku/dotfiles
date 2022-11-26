@@ -20,7 +20,7 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
       \ 'file': {'mode': 'os', 'trailingSlash': v:true, 'cwdAsRoot': v:true, 'projAsRoot': v:false},
-      \ 'dictionary': {'dictPaths': ['/usr/share/dict/words'], 'smartCase': v:true},
+      \ 'dictionary': {'dictPaths': [ '/Users/kenichi/.dict/work', '/usr/share/dict/words'], 'smartCase': v:true},
       \ 'buffer': {'requireSameFiletype': v:false, 'fromAltBuf': v:true, 'forceCollect': v:false, 'limitBytes': 5000000}
       \})
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
@@ -49,7 +49,7 @@ autocmd FileType tex,latex call ddc#custom#patch_filetype(['tex', 'latex'], 'sou
 autocmd FileType tex,latex setlocal indentexpr=GetTeXIndent() | let g:tex_indent_items = 0
 autocmd BufNewFile,BufRead *.yaml lua require'lspconfig'.yamlls.setup{}
 autocmd BufNewFile,BufRead *.yaml call ddc#custom#patch_filetype(['yaml'], 'sources', ['nvim-lsp', 'around']) | set filetype=yaml
-autocmd FileType markdown call ddc#custom#patch_filetype(['markdown'], 'sources', ['nvim-lsp', 'around'])
+autocmd FileType markdown call ddc#custom#patch_filetype(['markdown'], 'sources', ['nvim-lsp', 'around', 'dictionary'])
 autocmd FileType rust lua require'lspconfig'.rust_analyzer.setup{}
 autocmd FileType rust call ddc#custom#patch_filetype(['rust'], 'sources', ['nvim-lsp', 'around'])
 

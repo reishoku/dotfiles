@@ -6,7 +6,6 @@ set mouse=a
 set lazyredraw
 set relativenumber
 set title
-set shell=fish
 set autoindent
 set smartindent
 set expandtab
@@ -39,6 +38,12 @@ set matchpairs&
 set matchpairs+=<:>
 set completeopt=menuone
 set iskeyword+=-
+
+if executable(exepath("fish"))
+  set shell=fish
+else
+  set shell=bash
+endif
 
 if v:progname == "view" || v:progname == "ex"
   setl readonly nonumber norelativenumber

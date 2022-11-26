@@ -30,6 +30,9 @@ vim.g.loaded_netrwPlugin = 1
 -- empty setup using defaults
 require("fidget").setup()
 require("nvim-treesitter.configs").setup {
+  ensure_installed = { "markdown", "markdown_inline", "lua", "vim", "c", "bash", "cpp", "fish", "git_rebase", "gitignore", "latex", "make" },
+  sync_install = true,
+  auto_install = true,
   yati = { enable = true },
   indent = {enable = true},
   highlight = {enable = true},

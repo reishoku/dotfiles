@@ -11,19 +11,19 @@ if !has("win32")
   if !isdirectory(g:user_home_cache_dir)
     call mkdir(g:user_home_cache_dir)
   endif
-	if !executable("curl") || !executable("git")
-		echohl ErrorMsg
-		echomsg "executable not found: curl or git"
-		echohl None
-	endif
-	" clone dein.vim
-	if !isdirectory(g:user_home_cache_dir . "/dein/repos/github.com/Shougo/dein.vim")
-		echomsg "Installing dein plugin manager..."
-	  silent! call system("mkdir -p " . g:user_home_cache_dir . "/dein/repos/github.com/Shougo/dein.vim")
-		silent! call system("git clone --depth=1 http://github.com/Shougo/dein.vim " . g:user_home_cache_dir . "/dein/repos/github.com/Shougo/dein.vim")
-	  call feedkeys("\<CR>")
-	endif
-	let dein_plugin_manager_available = v:true
+  if !executable("curl") || !executable("git")
+    echohl ErrorMsg
+    echomsg "executable not found: curl or git"
+    echohl None
+  endif
+  " clone dein.vim
+  if !isdirectory(g:user_home_cache_dir . "/dein/repos/github.com/Shougo/dein.vim")
+    echomsg "Installing dein plugin manager..."
+    silent! call system(exepath("mkdir") . " -p " . g:user_home_cache_dir . "/dein/repos/github.com/Shougo/dein.vim")
+    silent! call system(exepath("git") . " clone --depth=1 http://github.com/Shougo/dein.vim " . g:user_home_cache_dir . "/dein/repos/github.com/Shougo/dein.vim")
+    call feedkeys("\<CR>")
+  endif
+  let dein_plugin_manager_available = v:true
 endif
  
 " dependency check
@@ -48,6 +48,10 @@ if !has("win32")
     echomsg "executable \"latexmk\" not found!"
     echohl None
   endif
+endif
+
+if empty(glob("~/.cache/dein/repos/github.com/Shougo/dein.vim"))
+  finish
 endif
 
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
@@ -85,7 +89,7 @@ if dein#load_state(g:user_home_cache_dir . "/dein")
     call dein#add('mtdl9/vim-log-highlighting')
     call dein#add('neovim/nvim-lspconfig')
     call dein#add('nvim-lualine/lualine.nvim')
-    call dein#add('nvim-treesitter/nvim-treesitter')
+    call dein#add('nvim-treesitter/nvim-treesitter', {'hook_post_update': 'TSUpdate'})
     call dein#add('nvim-treesitter/nvim-treesitter-context')
     call dein#add('RRethy/nvim-treesitter-endwise')
     call dein#add('preservim/vim-markdown')
@@ -102,7 +106,7 @@ if dein#load_state(g:user_home_cache_dir . "/dein")
     call dein#add('folke/twilight.nvim')
     call dein#add('Olical/aniseed')
     call dein#add('reishoku/nterm.nvim')
-    call dein#add('yutkat/confirm-quit.nvim')
+    " call dein#add('yutkat/confirm-quit.nvim')
     call dein#add('vim-jp/autofmt')
     call dein#add('Shougo/ddu.vim')
     call dein#add('Shougo/ddc.vim')
