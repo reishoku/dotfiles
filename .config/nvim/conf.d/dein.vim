@@ -27,28 +27,28 @@ if !has("win32")
 endif
  
 " dependency check
-if !has("win32")
-  if !executable("deno")
-    echohl ErrorMsg
-    echomsg "executable \"deno\" not found!"
-    echohl None
-  endif
-  if !executable("tree-sitter")
-    echohl ErrorMsg
-    echomsg "executable \"tree-sitter\" not found!"
-    echohl None
-  endif
-  if !executable("glow")
-    echohl ErrorMsg
-    echomsg "executable \"glow\" not found!"
-    echohl None
-  endif
-  if !executable("latexmk")
-    echohl ErrorMsg
-    echomsg "executable \"latexmk\" not found!"
-    echohl None
-  endif
-endif
+" if !has("win32")
+"   if !executable("deno")
+"     echohl ErrorMsg
+"     echomsg "executable \"deno\" not found!"
+"     echohl None
+"   endif
+"   if !executable("tree-sitter")
+"     echohl ErrorMsg
+"     echomsg "executable \"tree-sitter\" not found!"
+"     echohl None
+"   endif
+"   if !executable("glow")
+"     echohl ErrorMsg
+"     echomsg "executable \"glow\" not found!"
+"     echohl None
+"   endif
+"   if !executable("latexmk")
+"     echohl ErrorMsg
+"     echomsg "executable \"latexmk\" not found!"
+"     echohl None
+"   endif
+" endif
 
 if empty(glob("~/.cache/dein/repos/github.com/Shougo/dein.vim"))
   finish
