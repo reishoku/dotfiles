@@ -63,4 +63,10 @@ require'nterm.main'.init({
 
 -- Optional, if you want to use the telescope extension
 require('telescope').load_extension('nterm')
+require('orgmode').setup_ts_grammar()
+local status_ok, orgmode = pcall(require, "orgmode")
+if not status_ok then
+  return
+end
+require('orgmode').setup()
 EOF
