@@ -1,0 +1,16 @@
+
+--plain
+--italic-text=never
+--decorations=never
+--color=auto
+--paging=always
+--ignored-suffix ".rpmsave"
+--ignored-suffix ".rpmnew"
+--ignored-suffix ".rpmold"
+--ignored-suffix ".old"
+--ignored-suffix ".swap"
+--map-syntax "*.service:INI"
+--map-syntax "*.unit:INI"
+--map-syntax "*.socket:INI"
+--map-syntax "*.timer:INI"
+--map-syntax "*.mount:INI"
