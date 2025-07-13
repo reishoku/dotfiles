@@ -1,0 +1,16 @@
+
+[build]
+# jobs = 16
+rustflags = ["-C", "target-cpu=native", "-C", "debuginfo=0", "-C", "opt-level=3"]
+
+[profile.release]
+strip = true
+lto = true
+
+[term]
+# Seemingly color='always' does not play nice with fish shell completion
+color = 'auto'
+hyperlinks = true
+unicode = true
+progress.when = 'always'
+progress.width = 60
