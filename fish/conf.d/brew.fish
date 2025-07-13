@@ -1,0 +1,25 @@
+
+if command -sq brew
+
+  set -gx HOMEBREW_NO_ANALYTICS 1
+  set -gx HOMEBREW_NO_AUTO_UPDATE 1
+  set -gx HOMEBREW_NO_EMOJI 1
+  set -gx HOMEBREW_NO_ENV_HINTS 1
+  set -gx HOMEBREW_NO_UPDATE_REPORT_NEW 1
+  set -gx HOMEBREW_NO_VERIFY_ATTESTATIONS 1
+
+  set -gx HOMEBREW_UPGRADE_GREEDY 1
+
+  set -gx HOMEBREW_COLOR 1
+  if command -sq bat
+    set -gx HOMEBREW_BAT 1
+  end
+
+  set -gx HOMEBREW_EDITOR $EDITOR
+
+  set -gx HOMEBREW_DEVELOPER 'yes'
+
+  set -gx HOMEBREW_DISABLE_DEBREW 1
+
+end
+
