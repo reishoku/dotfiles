@@ -1,0 +1,13 @@
+
+set encoding=utf-8
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set hlsearch incsearch ignorecase
+
+nnoremap ; :
+nnoremap + :
+nnoremap * :
+nnoremap q <nop>
+nnoremap Q <nop>
+
+syntax enable
+filetype plugin indent on
