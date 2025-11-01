@@ -1,5 +1,4 @@
 
-if command -sq launchctl
-  # We are likely running on macOS
+if test $__fish_uname = 'Darwin'
   builtin ulimit -n unlimited
 end

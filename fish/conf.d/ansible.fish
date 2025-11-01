@@ -29,7 +29,7 @@ if command -sq bat
   set -gx ANSIBLE_PAGER 'bat'
 end
 
-if command -sq launchctl
+if test $__fish_uname = 'Darwin'
   # We are likely running on macOS
   set -gx OBJC_DISABLE_INITIALIZE_FORK_SAFETY 'YES'
 end
