@@ -1,0 +1,4 @@
+# From: /Applications/Xcode.app/Contents/Developer/usr/share/git-core/gitattributes
+*.m             diff=objc
+*.mm            diff=objc
+*.swift         diff=swift

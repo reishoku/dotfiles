@@ -1,0 +1,28 @@
+---
+If:
+  PathMatch:
+    - *.cpp
+    - *.hpp
+CompileFlags:
+  Compiler: clang++
+  BuiltinHeaders: QueryDriver
+  Remove:
+    - -W*
+  Add: 
+    - -std=gnu++23
+    - -Wl,-s
+    - -O2
+    - -I/opt/homebrew/include/SDL -D_THREAD_SAFE
+    - -L/opt/homebrew/lib -lSDLmain -lSDL -Wl,-framework,Cocoa
+    - --include-directory=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+    - --include-directory=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ffi
+    - --include-directory=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++
+    - --include-directory=/opt/homebrew/opt/ncurses/include/ncursesw
+    - --include-directory=/opt/homebrew/opt/ncurses/include/ncurses
+    - --include-directory=/opt/homebrew/opt/mecab/include
+    - --include-directory=/opt/homebrew/include
+    - --include-directory=/usr/local/include
+Diagnostics:
+  UnusedIncludes: None
+Index:
+  StandardLibrary: true

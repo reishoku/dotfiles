@@ -1,0 +1,17 @@
+
+**/Thumbs.db
+**/.DS_Store
+**/desktop.ini
+**/Icon\r
+**/Icon
+
+**/site-packages
+**/wheel
+**/*.pvm
+**/*.vmwarevm
+**/*.plist
+**/Not Added.localized
+**/go
+**/Contents/Resources
+**/Contents/MacOS
+

@@ -1,0 +1,37 @@
+
+**/Thumbs.db
+**/.DS_Store
+**/desktop.ini
+**/Icon\r
+**/Icon
+
+**/site-packages
+**/wheel
+**/*.pvm
+**/*.vmwarevm
+**/*.plist
+**/Not Added.localized
+**/go
+**/Contents/Resources
+**/Contents/PkgInfo
+**/Contents/MacOS
+**/*.qcow2
+**/*.strings
+**/*.crx
+**/Library
+**/GNS3
+**/データベース
+**/Pictures/*.photoslibrary
+**/Pictures/Photo Boothライブラリ
+**/perl5
+**/Caches
+**/Cache
+**/Previous Libraries.localized/*
+**/*.musiclibrary
+**/iPod_Control
+**/Thumbs
+**/Music
+**/Video
+**/Movies
+**/Pictures
+**/$RECYCLE.BIN
