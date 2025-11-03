@@ -1,4 +1,5 @@
 
 function watch --wraps watch
-  command watch -c -r -p $argv
+  set -fx WATCH_INTERVAL 1
+  command watch -c -r -p --interval $WATCH_INTERVAL $argv
 end

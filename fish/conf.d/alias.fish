@@ -152,7 +152,6 @@ if test (builtin string sub -s 1 -l 1 $version) -ge 4
   abbr --add --position anywhere ct git
   abbr --add --position anywhere cuear clear
   abbr --add --position anywhere culr curl
-  abbr --add --position anywhere d cd
   abbr --add --position anywhere dc cd
   abbr --add --position anywhere dc cd
   abbr --add --position anywhere dfn dnf
@@ -682,7 +681,6 @@ else
   abbr --add ct git
   abbr --add cuear clear
   abbr --add culr curl
-  abbr --add d cd
   abbr --add dc cd
   abbr --add dc cd
   abbr --add dfn dnf
